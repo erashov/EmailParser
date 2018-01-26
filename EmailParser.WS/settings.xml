@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Setting>
+  <Name>Заявка из метро</Name>
+  <ImapPort>993</ImapPort>
+  <ImapServer>mail.akado-telecom.ru</ImapServer>
+  <InputMail>startultimus@akado-telecom.ru</InputMail>
+  <InputMailPassword>SnrQF5kX</InputMailPassword>
+  <RegexMask>\W*([^[:]+):\s*(\S+)</RegexMask>
+  <ServiceUrl>http://serv-ultimus/UltIntegSvc/wsMailRun/newMail.asmx</ServiceUrl>
+  <Subject>Заявка из метро</Subject>
+  <ProcessName>Обработка_писем</ProcessName>
+  <ParamSettings>
+    <ParamSetting>
+      <FullName>Введенный номер телефона</FullName>
+      <Name>numtel_mail</Name>
+    </ParamSetting>
+  </ParamSettings>
+</Setting>
