@@ -32,6 +32,7 @@ namespace EmailParser.Console
             XmlSerializer serializer = new XmlSerializer(typeof(SettingList));
 
             StreamReader reader = new StreamReader(path);
+
             result = (SettingList)serializer.Deserialize(reader);
             reader.Close();
             //Setting setting = new Setting();
