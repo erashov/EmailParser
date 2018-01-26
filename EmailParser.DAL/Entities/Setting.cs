@@ -5,30 +5,30 @@ using System.Xml.Serialization;
 
 namespace EmailParser.DAL.Entities
 {
-    [Serializable]
+   // [Serializable]
     public class Setting
     {
     
-        [XmlElement("Name")]
+       // [XmlElement("Name")]
         public string Name { get; set; }
-        [XmlElement("InputMail")]
+       // [XmlElement("InputMail")]
         public string InputMail { get; set; }
-        [XmlElement("InputMailPassword")]
+        //[XmlElement("InputMailPassword")]
         public string InputMailPassword { get; set; }
-        [XmlElement("Subject")]
+        //[XmlElement("Subject")]
         public string Subject { get; set; }
-        [XmlElement("ServiceUrl")]
+        //[XmlElement("ServiceUrl")]
         public string ServiceUrl { get; set; }
-        [XmlElement("ImapServer")]
+        //[XmlElement("ImapServer")]
         public string ImapServer { get; set; }
-        [XmlElement("ImapPort")]
+        //[XmlElement("ImapPort")]
         public short ImapPort { get; set; }
-        [XmlElement("ProcessName")]
+        //[XmlElement("ProcessName")]
         public string ProcessName { get; set; }
-        [XmlElement("RegexMask")]
+        //[XmlElement("RegexMask")]
         public string RegexMask { get; set; }
-        [XmlArray("ParamSettings")]
-        [XmlArrayItem("ParamSetting")]
+        //[XmlArray("ParamSettings")]
+        //[XmlArrayItem("ParamSetting")]
         public ParamSetting[] ParamSettings { get; set; }
 
     }

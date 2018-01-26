@@ -17,37 +17,34 @@ namespace EmailParser.Console
     {
         static void Main(string[] args)
         {
-            var kernel = new StandardKernel();
-            kernel.Load(Assembly.GetExecutingAssembly());
-            var details = kernel.Get<IEmailService>();
-            var soap = kernel.Get<ISoapService>();
-            SettingList result = new SettingList();
+            //var kernel = new StandardKernel();
+            //kernel.Load(Assembly.GetExecutingAssembly());
+            //var details = kernel.Get<IEmailService>();
+            //var soap = kernel.Get<ISoapService>();
+            //List<Setting> result = new List<Setting>();
 
-        
-            string data;
-            string path = System.Environment.CurrentDirectory + @"\settings.xml";
+
+           // string path = System.Environment.CurrentDirectory + @"\settings.xml";
             //CarCollection cars = null;
             //string path = "cars.xml";
 
-            XmlSerializer serializer = new XmlSerializer(typeof(SettingList));
+            // XmlSerializer serializer = new XmlSerializer(typeof(SettingList));
 
-            StreamReader reader = new StreamReader(path);
+            string xmlString = "<Products><Product><Id>1</Id><Name>My XML product</Name></Product><Product><Id>2</Id><Name>My second product</Name></Product></Products>";
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Product>), new XmlRootAttribute("Products"));
+            StringReader stringReader = new StringReader(xmlString);
+            List<Product> productList = (List<Product>)serializer.Deserialize(stringReader);
+           
+            //XmlSerializer serializer = new XmlSerializer(typeof(List<Setting>), new XmlRootAttribute("Settings"));
 
-            result = (SettingList)serializer.Deserialize(reader);
-            reader.Close();
-            //Setting setting = new Setting();
-         //   XmlSerializer serializer = new XmlSerializer(typeof(SettingList));
-            ////  TextWriter textWriter = new StreamWriter(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().CodeBase, "settings.xml"));
-            //string path = System.Environment.CurrentDirectory + @"\settings.xml";
-   
+            //StreamReader reader = new StreamReader(path);
 
-            //Setting setting = new Setting();
-            //  details.PaerserEmailAsync(setting, soap);
-            //var employee = new Employee(details);
-            //string result = employee.Getdetails();
+            //result = (List<Setting>)serializer.Deserialize(reader);
+            //reader.Close();
 
-            // System.Console.WriteLine(result);
             System.Console.ReadKey();
         }
+
+
     }
 }

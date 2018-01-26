@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Entities\ParamSetting.cs" />
     <Compile Include="Entities\ParamType.cs" />
+    <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\RequestType.cs" />
     <Compile Include="Entities\Setting.cs" />
     <Compile Include="Entities\SettingList.cs" />
