@@ -1,6 +1,6 @@
 ﻿using EmailParser.DAL.Entities;
 using EmailParser.Service;
-using Ninject;
+//using Ninject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,26 +24,28 @@ namespace EmailParser.Console
             //List<Setting> result = new List<Setting>();
 
 
-           // string path = System.Environment.CurrentDirectory + @"\settings.xml";
+             string path = System.Environment.CurrentDirectory + @"\settings.xml";
             //CarCollection cars = null;
             //string path = "cars.xml";
 
-            // XmlSerializer serializer = new XmlSerializer(typeof(SettingList));
 
-            string xmlString = "<Products><Product><Id>1</Id><Name>My XML product</Name></Product><Product><Id>2</Id><Name>My second product</Name></Product></Products>";
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Product>), new XmlRootAttribute("Products"));
-            StringReader stringReader = new StringReader(xmlString);
-            List<Product> productList = (List<Product>)serializer.Deserialize(stringReader);
-           
-            //XmlSerializer serializer = new XmlSerializer(typeof(List<Setting>), new XmlRootAttribute("Settings"));
+            string readContents;
+            using (StreamReader streamReader = new StreamReader(path, Encoding.UTF8))
+            {
+                readContents = streamReader.ReadToEnd();
+            }
 
-            //StreamReader reader = new StreamReader(path);
 
-            //result = (List<Setting>)serializer.Deserialize(reader);
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Setting>), new XmlRootAttribute("Settings"));
+            StringReader stringReader = new StringReader(readContents);
+            List<Setting> productList = (List<Setting>)serializer.Deserialize(stringReader);
+
+
             //reader.Close();
 
             System.Console.ReadKey();
         }
+
 
 
     }
