@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            // 
+            // EmailParser
+            // 
+
             this.ServiceName = "Service1";
+
         }
 
         #endregion

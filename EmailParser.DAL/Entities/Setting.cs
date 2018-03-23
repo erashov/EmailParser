@@ -8,28 +8,84 @@ namespace EmailParser.DAL.Entities
    // [Serializable]
     public class Setting
     {
-    
-       // [XmlElement("Name")]
-        public string Name { get; set; }
-       // [XmlElement("InputMail")]
-        public string InputMail { get; set; }
-        //[XmlElement("InputMailPassword")]
-        public string InputMailPassword { get; set; }
-        //[XmlElement("Subject")]
-        public string Subject { get; set; }
-        //[XmlElement("ServiceUrl")]
-        public string ServiceUrl { get; set; }
-        //[XmlElement("ImapServer")]
-        public string ImapServer { get; set; }
-        //[XmlElement("ImapPort")]
-        public short ImapPort { get; set; }
-        //[XmlElement("ProcessName")]
-        public string ProcessName { get; set; }
-        //[XmlElement("RegexMask")]
-        public string RegexMask { get; set; }
-        //[XmlArray("ParamSettings")]
-        //[XmlArrayItem("ParamSetting")]
-        public ParamSetting[] ParamSettings { get; set; }
+        public string Name
+        {
+            get;
+            set;
+        }
+
+        public string InputMail
+        {
+            get;
+            set;
+        }
+
+        public string InputMailPassword
+        {
+            get;
+            set;
+        }
+
+        public string Subject
+        {
+            get;
+            set;
+        }
+
+        public string ServiceUrl
+        {
+            get;
+            set;
+        }
+
+        public string ImapServer
+        {
+            get;
+            set;
+        }
+
+        public short ImapPort
+        {
+            get;
+            set;
+        }
+
+        public string SmptServer
+        {
+            get;
+            set;
+        }
+
+        public short? SmptPort
+        {
+            get;
+            set;
+        }
+
+        public string OutputMail
+        {
+            get;
+            set;
+        }
+
+        public string ProcessName
+        {
+            get;
+            set;
+        }
+
+        public string RegexMask
+        {
+            get;
+            set;
+        }
+
+        public ParamSetting[] ParamSettings
+        {
+            get;
+            set;
+        }
+
 
     }
 }

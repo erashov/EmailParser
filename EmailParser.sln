@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailParser.Console", "EmailParser.Console\EmailParser.Console.csproj", "{A93CEF6B-7ABC-4F9B-88AD-F52EC16992C5}"
 EndProject
@@ -12,8 +12,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailParser.Model", "EmailParser.Model\EmailParser.Model.csproj", "{3A94474D-DBAF-4679-8023-1F9C242CF53E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailParser.WS", "EmailParser.WS\EmailParser.WS.csproj", "{AAF807EE-2129-44C3-B3F8-4C7DF9A5F135}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupEmailParser", "SetupEmailParser\SetupEmailParser.vdproj", "{086F848B-15CF-4648-9499-C8A4686EFBF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,8 +39,6 @@ Global
 		{AAF807EE-2129-44C3-B3F8-4C7DF9A5F135}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAF807EE-2129-44C3-B3F8-4C7DF9A5F135}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAF807EE-2129-44C3-B3F8-4C7DF9A5F135}.Release|Any CPU.Build.0 = Release|Any CPU
-		{086F848B-15CF-4648-9499-C8A4686EFBF6}.Debug|Any CPU.ActiveCfg = Debug
-		{086F848B-15CF-4648-9499-C8A4686EFBF6}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

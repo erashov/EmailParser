@@ -9,8 +9,10 @@ namespace EmailParser.Service
 {
    public interface IEmailService
     {
-        Task SendEmailAsync(string email, string subject, string message);
-        Task PaerserEmailAsync(Setting setting, ISoapService soapService);
-        Task MarkAsRead(Setting setting, List<Message> messages);
+        bool SendEmailAsync(Setting setting, string email, string subject, string message);
+
+        void PaerserEmailAsync(Setting setting, ISoapService soapService);
+
+        void MarkAsRead(Setting setting, List<Message> messages);
     }
 }
