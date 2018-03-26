@@ -24,7 +24,7 @@ namespace EmailParser.Service
 
             using (var client = new ImapClient())
             {
-              //  client.SslProtocols= System.Security.Authentication.SslProtocols.Ssl3;
+
                 client.Connect(setting.ImapServer, setting.ImapPort, SecureSocketOptions.Auto);
 
                 client.Authenticate(setting.InputMail, setting.InputMailPassword);
@@ -38,7 +38,7 @@ namespace EmailParser.Service
                 {
                     var message = client.Inbox.GetMessage(uid);
 
-                    if (message.Subject == setting.Subject && !setting.SmptPort.HasValue)
+                    if (message.Subject == setting.Subject && !setting.SmptPort.HasValue && !string.IsNullOrWhiteSpace(setting.RegexMask))
                     {
                         var ItemRegex = new Regex(setting.RegexMask, RegexOptions.Compiled);
                         var AllParamList = ItemRegex.Matches(message.TextBody)
@@ -57,7 +57,25 @@ namespace EmailParser.Service
 
                         }
                     }
-                    else if (message.Subject.Contains(setting.Subject) && this.SendEmailAsync(setting, setting.OutputMail, message.Subject, message.TextBody))
+                    else if(message.Subject == setting.Subject && !setting.SmptPort.HasValue)
+                    {
+                        string[] lines = message.TextBody.Split( new[] { "\r\n", "\r", "\n" },  StringSplitOptions.None);
+                        var paramList = (from line in lines
+                                        join settParam in setting.ParamSettings
+                                        on line.Split(new string[] { ": " }, StringSplitOptions.None).FirstOrDefault() equals settParam.FullName
+                                        select new ParamMessage
+                                        {
+                                            Name = settParam.Name,
+                                            Value = line.Split(new string[] { ": " }, StringSplitOptions.None).LastOrDefault()
+                                        }).ToList();
+                        var resultService = soapService.SendRequest(setting, paramList, message.TextBody, message.Date.Date.ToString());
+                        if (resultService == "OK")
+                        {
+                           // client.Inbox.AddFlags(uid, MessageFlags.Seen, true);
+                        }
+
+                    }
+                    else if (message.Subject.Contains(setting.Subject) && setting.SmptPort.HasValue && this.SendEmailAsync(setting, setting.OutputMail, message.Subject, message.TextBody))
                     {
                         client.Inbox.AddFlags(uid, MessageFlags.Seen, true, default(CancellationToken));
                     }

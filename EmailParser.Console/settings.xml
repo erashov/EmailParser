@@ -1,19 +1,87 @@
 ﻿<Settings>
-<Setting>
-  <Name>Заявка из метро</Name>
-  <ImapPort>993</ImapPort>
-  <ImapServer>mail.akado-telecom.ru</ImapServer>
-  <InputMail>startultimus@akado-telecom.ru</InputMail>
-  <InputMailPassword>SnrQF5kX</InputMailPassword>
-  <RegexMask>\W*([^[:]+):\s*(\S+)</RegexMask>
-  <ServiceUrl>http://serv-ultimus/UltIntegSvc/wsMailRun/newMail.asmx</ServiceUrl>
-  <Subject>Заявка из метро</Subject>
-  <ProcessName>Обработка_писем</ProcessName>
-  <ParamSettings>
-    <ParamSetting>
-      <FullName>Введенный номер телефона</FullName>
-      <Name>numtel_mail</Name>
-    </ParamSetting>
-  </ParamSettings>
-</Setting>
+  <Setting>
+    <Name>Заявка из метро</Name>
+    <ImapPort>993</ImapPort>
+    <ImapServer>mail.akado-telecom.ru</ImapServer>
+    <InputMail>startultimus@akado-telecom.ru</InputMail>
+    <InputMailPassword>SnrQF5kX</InputMailPassword>
+    <RegexMask>\W*([^[:]+):\s*(\S+)</RegexMask>
+    <ServiceUrl>http://serv-ultimus/UltIntegSvc/wsMailRun/newMail.asmx</ServiceUrl>
+    <Subject>Заявка из метро</Subject>
+    <ProcessName>Обработка_писем</ProcessName>
+    <ParamSettings>
+      <ParamSetting>
+        <FullName>Введенный номер телефона</FullName>
+        <Name>numtel_mail</Name>
+      </ParamSetting>
+    </ParamSettings>
+  </Setting>
+  <Setting>
+    <Name>Недоступные камеры</Name>
+    <ImapPort>993</ImapPort>
+    <ImapServer>mail.akado-telecom.ru</ImapServer>
+    <InputMail>startultimus@akado-telecom.ru</InputMail>
+    <InputMailPassword>SnrQF5kX</InputMailPassword>
+    <RegexMask></RegexMask>
+    <ServiceUrl>http://serv-ultimus2/UltIntegSvc/ProblemTickets/ProblemTickets.asmx</ServiceUrl>
+    <Subject>Недоступные камеры</Subject>
+    <ProcessName>Обработка_писем</ProcessName>
+    <ParamSettings>
+      <ParamSetting>
+        <FullName>Аккаунт</FullName>
+        <Name>account</Name>
+      </ParamSetting>
+      <ParamSetting>
+        <FullName>Название</FullName>
+        <Name>name</Name>
+      </ParamSetting>
+      <ParamSetting>
+        <FullName>BXXXXX</FullName>
+        <Name>servB</Name>
+      </ParamSetting>
+      <ParamSetting>
+        <FullName>OXXXXX</FullName>
+        <Name>servO</Name>
+      </ParamSetting>
+      <ParamSetting>
+        <FullName>Состояние</FullName>
+        <Name>state</Name>
+      </ParamSetting>
+      <ParamSetting>
+        <FullName>Дата события</FullName>
+        <Name>DateEvent</Name>
+      </ParamSetting>
+      <ParamSetting>
+        <FullName>url</FullName>
+        <Name>URL</Name>
+      </ParamSetting>
+    </ParamSettings>
+  </Setting>
+  <Setting>
+    <Name>критичного ПН</Name>
+    <ImapPort>993</ImapPort>
+    <ImapServer>mail.akado-telecom.ru</ImapServer>
+    <InputMail>startultimus@akado-telecom.ru</InputMail>
+    <OutputMail>vipticketmsg@etlgr.com</OutputMail>
+    <SmptPort>465</SmptPort>
+    <InputMailPassword>SnrQF5kX</InputMailPassword>
+    <RegexMask>(\b\w+)=(.*?(?=\s\w+=|$))</RegexMask>
+    <ServiceUrl></ServiceUrl>
+    <Subject>критичного ПН</Subject>
+    <ProcessName></ProcessName>
+    <ParamSettings>
+      <ParamSetting>
+        <FullName>email</FullName>
+        <Name>email</Name>
+      </ParamSetting>
+      <ParamSetting>
+        <FullName>subject</FullName>
+        <Name>subject</Name>
+      </ParamSetting>
+      <ParamSetting>
+        <FullName>bodytext</FullName>
+        <Name>bodytext</Name>
+      </ParamSetting>
+    </ParamSettings>
+  </Setting>
 </Settings>
